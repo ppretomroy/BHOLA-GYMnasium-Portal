@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHOLA GYMnasium</title>
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/YqTXDS52/350127944-286442500488976-1624741878496695721-n.jpg">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f1fc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Logo Section */
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        /* Title and Subtitle */
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Button Section */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            background-color: #faf4ff;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            justify-content: flex-start; /* Ensure the button content is aligned to the left */
+        }
+
+        .button:hover {
+            transform: scale(1.03);
+        }
+
+        .button-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #800000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px; /* Adds space between icon and text */
+        }
+
+        .button-icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .button-content {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .button-subtext {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 20px;
+            }
+            .button-title {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo and Title Section -->
+    <div class="logo">
+        <img src="https://i.postimg.cc/YqTXDS52/350127944-286442500488976-1624741878496695721-n.jpg" alt="BHOLA GYMnasium Logo">
+    </div>
+    <div class="title">BHOLA GYMnasium</div>
+    <div class="subtitle">Ready to take charge of your fitness? Bhola Gymnasium offers a range of expertly designed workout programs to suit every fitness level. Let's get started on your journey to a healthier, stronger you.</div>
+
+    <!-- Buttons Section -->
+    <div class="button-container">
+        <button class="button" onclick="navigateTo('code1.html')">
+            <div class="button-icon">
+                <img src="https://i.postimg.cc/k42rQ1VY/Mask-group-20.png" alt="Beginner Icon">
+            </div>
+            <div class="button-content">
+                <div class="button-title">Beginner</div>
+                <div class="button-subtext">First 30 Days Exercises</div>
+            </div>
+        </button>
+
+        <button class="button" onclick="navigateTo('#.html')">
+            <div class="button-icon">
+                <img src="https://i.postimg.cc/wvZC0XLq/Mask-group-21.png" alt="Intermediate Icon">
+            </div>
+            <div class="button-content">
+                <div class="button-title">Intermediate</div>
+                <div class="button-subtext">30 Days Exercises</div>
+            </div>
+        </button>
+
+        <button class="button" onclick="navigateTo('#.html')">
+            <div class="button-icon">
+                <img src="https://i.postimg.cc/7hzpc5ng/Mask-group-22.png" alt="Advanced Icon">
+            </div>
+            <div class="button-content">
+                <div class="button-title">Advance</div>
+                <div class="button-subtext">Daily Exercises</div>
+            </div>
+        </button>
+    </div>
+</div>
+
+<!-- JavaScript for navigation -->
+<script>
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+</script>
+
+</body>
+</html>
