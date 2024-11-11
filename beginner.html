@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/YqTXDS52/350127944-286442500488976-1624741878496695721-n.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Program</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2ff;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .exercise-card {
+            display: flex;
+            align-items: center;
+            background-color: #f9f1ff;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .exercise-card:hover {
+            background-color: #e5d5ff;
+        }
+
+        .icon {
+            background-color: #830408;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+
+        .text {
+            text-align: left;
+        }
+
+        .text h2 {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .text span {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #960a38;
+            margin: 20px auto;
+            padding: 15px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid #960a38;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .close-btn {
+            background-color: #960a38;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* Responsive Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+            display: none; /* Hide video container by default */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+
+        /* Logo Section */
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+   
+    
+    <div class="container">
+        <div class="logo">
+            <img src="https://i.postimg.cc/YqTXDS52/350127944-286442500488976-1624741878496695721-n.jpg" alt="BHOLA GYMnasium Logo">
+        </div>
+        <h1>First 30 Days Exercises</h1>
+        <p>The "First 30 Days Exercises" program is designed to help individuals kick-start their fitness journey with a structured, beginner-friendly plan.</p>
+
+
+
+
+        <div class="exercise-card" onclick="openModal('Stratching', null, true)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/zv2dX8Dx/Mask-group-2.png" alt="Jogging" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Stratching</h2>
+                <span>5 Minutes</span>
+            </div>
+        </div>
+
+        
+        <div class="exercise-card" onclick="openModal('Jogging', null, true)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/RCgpTQ1w/Mask-group-3.png" alt="Jogging" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Jogging</h2>
+                <span>5 Minutes</span>
+            </div>
+        </div>
+
+        <div class="exercise-card" onclick="openModal('Skipping', null, true)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/5NGPh4R0/Mask-group-4.png" alt="Skipping" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Skipping</h2>
+                <span>50 Times</span>
+            </div>
+        </div>
+
+        
+        <div class="exercise-card" onclick="openModal('Side Twisting', 'https://www.youtube.com/embed/DJQGX2J4IVw', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/25N05HmN/Mask-group-5.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Side Twisting</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+        <div class="exercise-card" onclick="openModal('Weight Side Bend', 'https://www.youtube.com/embed/XGVmsVHbMRs', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/RhW7df9T/Mask-group-6.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Weight Side Bend</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+        <div class="exercise-card" onclick="openModal('Front Bend', 'https://www.youtube.com/embed/ddmiGcbjgTwdssND', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/MTTVZRc8/Mask-group-7.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Front Bend</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+        <div class="exercise-card" onclick="openModal('Chin Up', 'https://vidcdn.123rf.com/preview_480/exerciseanimatic/exerciseanimatic2305/exerciseanimatic230500229.mp4', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/8s86b0Z1/Mask-group-8.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Chin Up</h2>
+                <span>15-15 TIM</span>
+            </div>
+        </div>
+        <!-- Other exercise cards here -->
+
+        <div class="exercise-card" onclick="openModal('Push up', 'https://www.youtube.com/embed/0pkjOk0EiAk', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/QNv4PNPM/Mask-group-9.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Push up</h2>
+                <span>50 Rips</span>
+            </div>
+        </div>
+
+        <div class="exercise-card" onclick="openModal('Arms Barbell Curl', 'https://www.youtube.com/embed/N5x5M1x1Gd0', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/cC3mZYjL/Mask-group-10.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Arms Barbell Curl</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+
+
+        <div class="exercise-card" onclick="openModal('Arms Hammer Curl', 'https://www.youtube.com/embed/CFBZ4jN1CMI', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/rwj98qhx/Mask-group-11.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Arms Hammer Curl</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+        <div class="exercise-card" onclick="openModal('Side Rises', 'https://www.youtube.com/embed/XPPfnSEATJA', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/g0BqZNb0/Mask-group-12.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Side Rises</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+
+
+        <div class="exercise-card" onclick="openModal('Front Rises', 'https://www.youtube.com/embed/zkP0MsTcIVU', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/DyFsmt4g/Frame-10.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Front Rises</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+        <div class="exercise-card" onclick="openModal('Dumbbell Press', 'https://www.youtube.com/embed/OM23fjJB3-0', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/Gtj4kmTj/Frame-11.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Dumbbell Press</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+
+        <div class="exercise-card" onclick="openModal('Triceps Kick', 'https://www.youtube.com/embed/m_UlDFNX4mk', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/wMFB14nf/Mask-group-14.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Triceps Kick</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+
+
+        <div class="exercise-card" onclick="openModal('Triceps Stand', 'https://www.youtube.com/embed/q5X9thiKofE', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/rFnmcb1z/Mask-group-15.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Triceps Stand</h2>
+                <span>2 Set</span>
+            </div>
+        </div>
+
+
+        <div class="exercise-card" onclick="openModal('Fore Arms', 'https://www.youtube.com/embed/Bqvmyni_sKQ', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/y8283ZrH/Mask-group-16.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Fore Arms 1-2KG</h2>
+                <span>15+15 Times</span>
+            </div>
+        </div>
+
+
+
+        <div class="exercise-card" onclick="openModal('Abs Bench', 'https://www.youtube.com/embed/GPBVNHl5cS8', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/kGMJPFDx/Mask-group-17.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Abs Bench 1&2</h2>
+                <span>4 Set</span>
+            </div>
+        </div>
+
+
+        <div class="exercise-card" onclick="openModal('How to Do: LEG RAISES', 'https://www.youtube.com/embed/dGKbTKLnym4', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/y6fBSRkb/Mask-group-18.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>ABS Floor Leg Rise</h2>
+                <span>4 Set</span>
+            </div>
+        </div>
+
+
+
+        <div class="exercise-card" onclick="openModal('Leg Swuat', 'https://www.youtube.com/embed/42bFodPahBU', false)">
+            <div class="icon">
+                <img src="https://i.postimg.cc/XNDSv0PM/Mask-group-19.png" alt="Side Twisting" width="40" height="40"> <!-- Replace with actual image path -->
+            </div>
+            <div class="text">
+                <h2>Leg Swuat</h2>
+                <span>50 Times</span>
+            </div>
+        </div>
+
+
+
+
+        
+        
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Exercise Name</h2>
+            <div id="timer" class="timer" style="display: none;">05:00</div>
+            <div class="video-container" id="video-container">
+                <iframe id="modal-video" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        let countdownInterval;
+
+        function openModal(title, videoUrl, hasTimer) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal").style.display = "flex";
+
+            if (hasTimer) {
+                document.getElementById("video-container").style.display = "none"; // Hide video container
+                document.getElementById("modal-video").src = ""; // Ensure video is stopped
+                startTimer(300); // Start 5-minute countdown
+            } else {
+                document.getElementById("timer").style.display = "none"; // Hide timer
+                document.getElementById("video-container").style.display = "block"; // Show video container
+                document.getElementById("modal-video").src = videoUrl; // Set video URL
+            }
+        }
+
+        function startTimer(duration) {
+            let timeLeft = duration;
+            document.getElementById("timer").style.display = "flex";
+
+            function updateTimerDisplay() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById("timer").innerText =
+                    `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }
+
+            updateTimerDisplay();
+
+            countdownInterval = setInterval(function() {
+                timeLeft -= 1;
+                updateTimerDisplay();
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("timer").innerText = "Time's up!";
+                }
+            }, 1000);
+        }
+
+        function closeModal() {
+            clearInterval(countdownInterval);
+            document.getElementById("modal-video").src = ""; // Stop video playback
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("timer").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
